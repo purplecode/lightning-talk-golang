@@ -1,0 +1,817 @@
+section
+    h1 JavaScript in 2016
+    h3 Current status of JS development
+
+section
+    section
+        h2 Javascript
+        img(src="src/images/jsgolf.jpg")
+        p This is Javascript. If you put big wheels and a racing stripe on a golf cart, it's still a fucking golf cart.
+        br
+        small
+            a(href="http://crashworks.org/if_programming_languages_were_vehicles/" target="_blank") @source: if programming languages were vehicles
+
+    section
+        h2 WAT
+        pre
+            code.hljs.javascript.
+                2 == [2];
+                // true
+
+                2 == [[2]];
+                // true
+
+                [] + [];
+                // ""
+
+                [] + {};
+                // "[object Object]"
+
+                {} + [];
+                // 0
+
+    section
+        h2 WAT
+        pre
+            code.hljs.javascript.
+                "string" instanceof String;
+                // false
+
+                String("abc") instanceof String;
+                // false
+
+                new String("abc") instanceof String;
+                // true
+
+                111111111111111111111 === 111111111111111110000;
+                 // true
+        small
+            | Recommended: &nbsp;
+            a(href="https://www.destroyallsoftware.com/talks/wat" target="_blank") A lightning talk by Gary Bernhardt [CodeMash, 2012]
+
+section#popularity
+    style.
+        #popularity img {
+            max-height: 50vh;
+            display: block;
+            margin: auto;
+            margin-bottom: 5px;
+        }
+    section
+        h1 Popularity
+
+    section
+        h2 Popularity
+        h4 languages usage
+        img(src="src/images/popularity-github.jpg")
+        small @source: github
+
+    section
+        h2 Popularity
+        h4 libraries count
+        img(src="src/images/modules.png")
+        small @source: &nbsp;
+            a(href="http://www.modulecounts.com/") www.modulecounts.com
+
+    section
+        h2 Popularity
+        h4 stackoverflow questions & answers
+        img(src="src/images/popularity-stackoverflow.png")
+        small @source: &nbsp;
+            a(href="https://smthngsmwhr.wordpress.com/2012/11/19/measuring-popularity-of-programming-languages/") https://smthngsmwhr.wordpress.com
+
+    section
+        h2 Popularity
+        h4 twitter mentioning
+        img(src="src/images/popularity-twits.png")
+        small @source: &nbsp;
+            a(href="http://blog.revolutionanalytics.com/2010/12/programming-languages-ranked-by-popularity.html") http://blog.revolutionanalytics.com
+
+    section
+        h2 Popularity
+        h4 most in-demand languages in 2016
+        img(src="src/images/popularity-jobs.jpg")
+        small @source: &nbsp;
+            a(href="http://www.codingdojo.com/blog/9-most-in-demand-programming-languages-of-2016/") www.codingdojo.com
+
+    section
+        h2 Popularity
+        h4 google trends - tutorials search
+        img(src="src/images/popularity-pypl.png")
+        small @source: &nbsp;
+            a(href="http://pypl.github.io/PYPL.html") pypl.github.io
+
+section
+    section
+        h1 Ubiquity
+
+    section
+        h2 Ubiquity
+        h4 Browser & server
+        ul
+            li Node.js
+            li Angular
+            li React
+            li Ember
+            li Backbone
+            li Meteor
+            li Polymer
+            li Aurelia
+            li ...
+        div
+            br
+            a(href="http://www.isaacchansky.me/days-since-last-new-js-framework/") days-since-last-new-js-framework
+
+    section
+        h2 Ubiquity
+        h4 Cross platform desktop apps
+        ul
+            li
+                a(href="http://appjs.com/") App.js
+            li
+                a(href="http://electron.atom.io/") Electron (Atom Shell)
+            li
+                a(href="http://nwjs.io/") NW.js (node-webkit)
+
+    section
+        h2 Ubiquity
+        h4 Mobile native apps
+        ul
+            li
+                a(href="https://cordova.apache.org/") Cordova
+            li
+                a(href="http://phonegap.com/") Phonegap
+            li
+                a(href="https://facebook.github.io/react-native/") React-Native
+            li
+                a(href="http://ionicframework.com/") Ionic
+            li
+                a(href="https://www.nativescript.org/") NativeScript
+            li
+                a(href="https://tabrisjs.com/") Tabris
+
+    section
+        h2 Ubiquity
+        h4 Microcontrollers
+        ul
+            li
+                a(href="http://johnny-five.io/") Johnny Five
+            li
+                a(href="http://www.espruino.com/") Espruino
+            li
+                a(href="https://tessel.io/") Tessel
+            li
+                a(href="http://iop.io/") Iop.io
+
+    section
+        h2 Ubiquity
+        h4 Drones & IoT
+        ul
+            li
+                a(href="https://github.com/felixge/node-ar-drone") node-ar-drone
+            li
+                a(href="https://samsung.github.io/iotjs/") iot.js
+            li
+                a(href="https://cylonjs.com/") cyclon.js
+            li
+                a(href="https://www.cesanta.com/products/smart-js") Smart.js
+
+    section
+        h2 Ubiquity
+        h4 Shell
+        ul
+            li
+                a(href="https://github.com/kimmobrunfeldt/concurrently") concurently
+            li
+                a(href="https://github.com/dthree/cash") cach
+            li
+                a(href="https://github.com/shipitjs/shipit") shipit
+            li
+                a(href="https://www.npmjs.com/package/shelljs") shelljs
+
+    section
+        h2 Ubiquity
+        h4 Virtualisation
+        img(src="src/images/wat-duck.jpg")
+        div
+            br
+            a(href="https://github.com/copy/v86") V86
+
+section
+    section#ecmascript
+        style.
+            #ecmascript table {
+                margin: auto;
+                width: 60%;
+            }
+
+            #ecmascript table tr td {
+                text-align: center;
+            }
+        h2 ECMAScript
+        table
+            thead
+                tr
+                    td Version
+                    td Date published
+            tbody
+                tr
+                    td 1.0
+                    td 1997
+                tr
+                    td 2.0
+                    td 1998
+                tr
+                    td 3.0
+                    td 1999
+                tr
+                    td 4.0
+                    td abandoned
+                tr
+                    td 5.0
+                    td 2009
+                tr
+                    td 5.1
+                    td 2011
+                tr
+                    td 6.0
+                    td 2015
+                tr
+                    td 7.0
+                    td in progress
+        br
+        small * JavaScript/Mocha/LiveScript - 1995, Brendan Eich, Netscape
+
+    section
+        h2 ES6 - Classes
+        pre
+            code.hjls.javascript.
+                class Polygon {
+                  constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                  }
+                }
+
+                let p = new P(100, 200);
+
+    section
+        h2 ES6 - let, const, var
+        pre
+            code.hjls.javascript.
+                function() {
+                    if(true) {
+                        var v = 1;
+                        let l = 1;
+                        const c = 1;
+                    }
+                    console.log(v, l, c);
+                }
+
+    section
+        h2 ES6 - spread & destructuring
+        pre
+            code.hjls.javascript.
+                let array = [1, 2, 3, 4, 5];
+
+                let [one, two, ...rest] = array; // one = 1, two = 2, rest = [3, 4, 5]
+
+                let array2 = [...array, 6, 7, 8] // [1, 2, 3, 4, 5, 6, 7, 8]
+
+        pre
+            code.hjls.javascript.
+                let {a, b} = {a:1, b:2} // a = 1, b = 2
+
+                let {a, b, ...rest} = {a:1, b:2, c:3, d:4}  // ES7
+
+                let [a, b] = [b, a]; // swap
+
+    section
+        h2 ES6 - spread & destructuring
+        pre
+            code.hjls.javascript.
+                let obj = {a:1, b:2};
+
+                let d = 4;
+
+                let obj2 = {
+                    ...obj,
+                    c:3,
+                    d
+                }
+                // obj2 = {"a":1, "b":2, "c":3, "d":4}
+
+    section
+        h2 ES6 - destructuring
+        pre
+            code.hjls.javascript.
+                function f({a, b}) {
+                    return a + b;
+                }
+
+                f({a: 1, b: 2})
+        pre
+            code.hjls.javascript.
+                function plot({size = 10, cords = { x: 0, y: 0} } = {}) {
+                    ...
+                }
+
+                plot({ cords: { x: 18, y: 30 } });
+
+    section
+        h2 ES6 - modules
+        pre
+            code.hjls.javascript.
+                export const PI = Math.PI;
+                export function sin(x) {}
+                export function cos(x) {}
+                export function random(x) {}
+
+                export default {
+                    PI,
+                    sin,
+                    cos,
+                    random
+                }
+
+        pre
+            code.hjls.javascript.
+                import { PI } from 'my/module';
+                import { sin, cos } from 'my/module';
+                import { random as mathRandom } from 'my/module';
+
+                import Math from 'my/module';
+
+    section
+        h2 ES6 - string templates
+        pre
+            code.hjls.javascript.
+                let x = 2, y = 3;
+
+                let text = `value of x = ${x + y}`
+
+        pre
+            code.hjls.javascript.
+                `
+                    multi
+                    line
+                `
+    section
+        h2 ES6 - tagged template literals
+        pre
+            code.hjls.javascript.
+                function tag(strings, ...values) {
+                  return function(obj) {
+                        return strings[0] + obj[values[0]] + strings[1];
+                  };
+                }
+
+                let hello = tag`Hello ${'name'}!`;
+
+                hello({name: 'Alice'});     // "Hello Alice!"
+                hello({name: 'Bob'});       // "Hello Bob!"
+
+    section
+        h2 ES6 - generators
+        pre
+            code.hjls.javascript.
+                function* oneTwo(){
+                    yield 1;
+                    yield 2;
+                }
+
+                let gen = oneTwo();
+
+                console.log(gen.next()); // {value: 1, done: false}
+                console.log(gen.next()); // {value: 1, done: false}
+                console.log(gen.next()); // {value: undefined, done: true}
+
+    section
+        h2 ES6 - rest arguments
+        pre
+            code.hjls.javascript.
+                function argsLength(...theArgs) {
+                    console.log(theArgs.length);
+                }
+
+                argsLength();           // 0
+                argsLength(5);          // 1
+                argsLength(5, 6, 7);    // 3
+
+    section
+        h2 ES6 - arrow functions
+        pre
+            code.hjls.javascript.
+                function (a) {
+                    return a * 2;
+                }
+
+                a => a * 2
+
+                () => 4
+
+                (a, b) => a * b
+
+                (a, b) => {
+                    return a * b;
+                }
+
+        pre
+            code.hjls.javascript.
+                return function() {
+                    return this.text
+                }.bind(this);
+
+                return () => this.text
+
+    section
+        h2 ES6 - promises
+        pre
+            code.hjls.javascript.
+                let promise = new Promise((resolve, reject) => {
+                    let result = Math.random();
+                    result < 0.5 ? resolve(result) : reject('too much');
+                });
+
+                promise
+                    .then(result => console.log(result))
+                    .catch(e => console.log(`error: ${e}`))
+
+    section
+        h2 ES6 - more...
+        ul
+            li Map, Set
+            li WeakMap, WeakSet
+            li Reflect
+            li Symbol
+            li Proxy
+
+    section
+        h2
+            strong ES7
+            | - more, more, more...
+
+        p Exponentiation operator
+        pre
+            code.hjls.javascript.
+                let cubed = x => x ** 3;
+
+        p async/await
+        pre
+            code.hjls.javascript.
+                async function asyncFunction() {
+                  await functionReturningPromise();
+                }
+                asyncFunction().then(...)
+
+        p decorators
+        pre
+            code.hjls.javascript.
+                class Person {
+                  @memoized
+                  get name() { return 'Bob'; }
+                }
+
+        p class properties
+        pre
+            code.hjls.javascript.
+                class Person {
+                    name = 'Alice';
+                    static says = 'I love JS!';
+                }
+
+section
+    section
+        h1 Tooling
+
+    section
+        h2 NPM & Bower
+        .split
+            .left
+                img.logo(src="src/images/logos/npm.png")
+            .right
+                img.logo(src="src/images/logos/bower.png")
+        p package managers for JavaScript
+
+    section
+        h2 Gulp & Grunt
+        img.logo(src="src/images/logos/gulp.png")
+        img.logo(src="src/images/logos/grunt.png")
+        p JavaScript build system and task runner
+
+    section
+        h2 Webpack
+        img.logo(src="src/images/logos/webpack.png")
+        p module bundler for JavaScript
+
+    section
+        h2 Firebug & Chrome Dev Tools
+        .split
+            .left
+                img.logo(style="height: 35vh;" src="src/images/logos/firebug.png")
+            .right
+                img.logo(src="src/images/logos/chrome.png")
+        p JavaScript debugging tools
+
+    section
+        h2 Babel
+        img.logo(src="src/images/logos/babel.png")
+        p pluggable JavaScript compiler
+
+section
+    section
+        h1 Evolution
+
+    section
+        h2 Transpilers
+        h3 source-to-source compilers
+        hr
+        ul(style="font-size: 0.8em;")
+            li CoffeeScript - syntactic sugar inspired by Ruby, Python and Haskell
+            li TypeScript - superset of JavaScript with optional static typing
+            li Dart - general-purpose programming language developed by Google
+            li JSX - superset with XML-like syntax for HTML elements representation
+        hr
+        p(style="font-size: 0.8em;")
+            | Other (366): ruby (9), python (16), java (16), scala (4), .NET (19), lisp-like (23)
+        small
+            | @more: &nbsp;
+            a(href="https://github.com/jashkenas/coffeescript/wiki/list-of-languages-that-compile-to-js") Languages compiled to JavaScript
+
+    section
+        h2 Typescript
+        pre
+            code.hjls.typescript.
+                interface Shape {
+                    new (color: string);
+                }
+
+                class Square implements Shape  {
+                    private size: number;
+                    constructor(size: number, color: string) {
+                        super(color);
+                        this.size = size;
+                    }
+                }
+
+                var square: Square = new Square(10, 'blue');
+
+    section
+        h2 Typescript
+        pre
+            code.hjls.typescript.
+                declare namespace d3 {
+                    export var version: string;
+                    export function select(selector: string): Selection<any>;
+                    export function selectAll(nodes: EventTarget[]): Selection<any>;
+                }
+
+                declare module 'd3' {
+                    export = d3;
+                }
+
+    section
+        h2 Asm.js
+        p
+            | Strict subset JavaScript for significant performance improvements of applications that are written in statically-typed languages.
+            | ~2x slower than native compilation of C with clang.
+        .split
+            .left
+                pre
+                    code.hjls.c.
+                        size_t strlen(char *ptr) {
+                          char *curr = ptr;
+                          while (*curr != 0) {
+                            curr++;
+                          }
+                          return (curr − ptr);
+                        }
+
+
+
+            .right
+                pre
+                    code.hjls.javascript.
+                        function strlen(ptr) {
+                          ptr = ptr|0;
+                          var curr = 0;
+                          curr = ptr;
+                          while (MEM8[curr]|0 != 0) {
+                            curr = (curr + 1)|0;
+                          }
+                          return (curr − ptr)|0;
+                        }
+        small
+            | @source: &nbsp;
+            a(href="https://en.wikipedia.org/wiki/Asm.js") Wikipedia
+
+    section
+        h2 Benchmark
+        img(src="src/images/asm_sha1.png")
+        small @source: &nbsp;
+            a(href="http://kukun.in/asm-js-speed-benchmark/") http://kukun.in/asm-js-speed-benchmark
+
+
+section
+    section
+        h1 Good to know
+
+    section
+        h2 Web Workers
+        p JavaScript threads running in the background
+        pre
+            .filename index.js
+            code.hjls.javascript.
+                var worker = new Worker("workerScript.js");
+
+                worker.postMessage({id: 0, text : '...'});
+
+                worker.onmessage(event => console.log(event.data));
+
+        pre
+            .filename workerScript.js
+            code.hjls.javascript.
+                onmessage = (event) => {
+                    postMessage({
+                        id: event.data.id,
+                        result: eval(event.data.data)
+                    });
+                }
+
+    section
+        h2 Virtual DOM
+        ul
+            li DOM is not optimal for dynamic UI
+            li mimic DOM in JavaScript and apply only diff
+            li minimum number of operations to transform one tree into another ~ O(n<sup>3</sup>)
+            li React.js - non-optimal heuristic ~ O(n) (unique keys, model assumptions)
+            li implementations: React, Mithril, Matt-Esch/virtual-dom
+
+
+    section
+        h2 Shadow DOM
+        pre
+            code.hljs.html.
+                &lt;template id="template"&gt;
+                    &lt;style&gt;
+                        ...
+                    &lt;/style&gt;
+                    &lt;div class="outer"&gt;
+                        &lt;div class="title"&gt;Hello world from&lt;/div&gt;
+                        &lt;div class="name"&gt;
+                            &lt;content&gt;&lt;/content&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/template&gt;
+                &lt;div id="example"&gt;&lt;/div&gt;
+                &lt;script&gt;
+                    var shadow = document.querySelector('#example').createShadowRoot();
+                    var template = document.querySelector('#template');
+                    var clone = document.importNode(template.content, true);
+                    shadow.appendChild(clone);
+                &lt;/script&gt;
+
+        template#shadow-dom-template
+            style.
+                .outer {
+                    border: 1px dashed white;
+                    background: #9E0000;
+                    width: 90%;
+                    margin: auto;
+                    text-align: center;
+                }
+
+                .title {
+                    color: white;
+                    padding: 0.2em;
+                }
+
+                .name {
+                    background: white;
+                    padding: 0.2em;
+                }
+            .outer
+                .title
+                    | Hello world from
+                .name
+                    content
+        #shadow-dom-example Shadom DOM
+        script.
+            var shadow = document.querySelector('#shadow-dom-example').createShadowRoot();
+            var template = document.querySelector('#shadow-dom-template');
+            var clone = document.importNode(template.content, true);
+            shadow.appendChild(clone);
+
+    section
+        h2 IndexedDB
+        ul
+            li client-side storage for structured data, files or blobs
+            li asynchronous, transactional, indexes
+            li same-origin principle, available from web-workers
+            li wrapper:&nbsp;
+                a(href="http://dexie.org/") dexie
+            pre
+                code.hljs.javascript.
+                    var request = window.indexedDB.open("hollywood", 1);
+                    request.onerror = event => console.log("Error", event);
+                    request.onupgradeneeded = (event) => {
+                        var database = event.target.result;
+                        database.createObjectStore("movies", {keyPath: "id"})
+                            .add({ id: "0", name: "Seksmisja" });
+                    }
+                    request.onsuccess = event => {
+                        var database = event.target.result;
+                        var transaction = database.transaction(["movies"], "readonly")
+                            .objectStore("movies")
+                            .get("0");
+                        transaction.onsuccess = event => console.log(transaction.result);
+                        transaction.onerror = event => console.log("Error", event);
+                    };
+
+    section
+        h2 Sockets
+        ul
+            li full-duplex communication channels over a single TCP connection
+        pre
+            code.hljs.javascript.
+                var socket = new WebSocket('ws://domain.com:12010/api');
+                socket.onopen = () => {
+                  setInterval(function() {
+                      socket.send(data);
+                  }, 100);
+                };
+                socket.onmessage = (event) => {
+                    console.log(event.data);
+                }
+
+    section
+        h2 Server push
+        ul
+            li transaction is initiated by the server
+            pre
+                code.hljs.javascript.
+                    var indexFile = fs.readFileSync(path.join(__dirname, './index.js'));
+                    var addons = path.join(__dirname, '/addons.js');
+
+                    function onRequest(request, response) {
+                       var filename = path.join(__dirname, request.url);
+                         if (response.push) {
+                           var push = response.push('/addons.js');
+                           push.writeHead(200);
+                           fs.createReadStream(addons).pipe(push);
+                         }
+                         response.end(indexFile);
+                     }
+
+                    http2.createServer(options, onRequest).listen(8080);
+
+    section
+        h2 Server side rendering
+        ul
+            li page loads faster, no white page
+            li content is visible to search engine
+            li less browser compatibility issues
+            li doable current frameworks like React
+        .split
+            .left
+                pre
+                    code.hjls.c.
+                        var React = require('react');
+                        var ReactDOM = require('react-dom');
+
+                        class MyComponent extends React.Component {
+                            render() {
+                                return &lt;div&gt;Hello World&lt;/div&gt;;
+                            }
+                        }
+                        ReactDOM.render(&lt;MyComponent /&gt;, node);
+            .right
+                pre
+                    code.hjls.javascript.
+                        var React = require('react');
+                        var ReactDOMServer = require('react-dom/server');
+
+                        class MyComponent extends React.Component {
+                            render() {
+                                return &lt;div&gt;Hello World&lt;/div&gt;;
+                            }
+                        }
+                        ReactDOMServer.renderToString(&lt;MyComponent /&gt;);
+section
+    h2 This is all for now...
+
+section
+    h2 Thanks!
+
+
+
+
+
+
+
+
+
+
+
+
+

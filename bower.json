@@ -1,0 +1,22 @@
+{
+  "name": "lightning-talk-neo4j",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Mateusz Jaworski"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/purplecode/lightning-talk-neo4j",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "highlightjs": "~9.1.0",
+    "reveal-js": "~2.6.2",
+    "github-fork-ribbon-css": "~0.2.0"
+  }
+}
