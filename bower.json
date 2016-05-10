@@ -1,12 +1,12 @@
 {
-  "name": "lightning-talk-neo4j",
+  "name": "lightning-talk-golang",
   "description": "",
   "main": "",
   "authors": [
     "Mateusz Jaworski"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/purplecode/lightning-talk-neo4j",
+  "homepage": "https://github.com/purplecode/lightning-talk-golang",
   "moduleType": [],
   "private": true,
   "ignore": [

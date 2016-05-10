@@ -21,6 +21,7 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', function () {
+    build();
     gulp.watch(paths.src, function () {
         build();
     });
