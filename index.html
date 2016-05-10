@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><title>Golang</title><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="bower_components/reveal-js/css/reveal.min.css"><link rel="stylesheet" href="bower_components/reveal-js/css/theme/moon.css"><link rel="stylesheet" href="bower_components/github-fork-ribbon-css/gh-fork-ribbon.css"><link rel="stylesheet" href="bower_components/highlightjs/styles/default.css"><link rel="stylesheet" href="src/styles/theme.css"><link rel="stylesheet" href="src/styles/common.css"><style>.reveal section img.logo {
+<!DOCTYPE html><html lang="en"><head><title>Golang</title><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="bower_components/reveal-js/css/reveal.min.css"><link rel="stylesheet" href="bower_components/reveal-js/css/theme/moon.css"><link rel="stylesheet" href="bower_components/github-fork-ribbon-css/gh-fork-ribbon.css"><link rel="stylesheet" href="bower_components/highlightjs/styles/default.css"><link rel="stylesheet" href="src/styles/theme.css"><link rel="stylesheet" href="src/styles/common.css"><style>.reveal section img {
     background: none;
     border: none;
     box-shadow: none;
@@ -32,21 +32,23 @@
      max-height: none;
 }
 
-</style></head><body><a href="https://github.com/purplecode/lightning-talk-golang" title="Fork me on Github" class="github-fork-ribbon right-top"></a><div class="reveal"><div class="slides"><section><h1>Go Programming Language</h1><h3>Introduction</h3></section><section><section><h2>Javascript</h2><img src="src/images/jsgolf.jpg"><p>This is Javascript. If you put big wheels and a racing stripe on a golf cart, it's still a fucking golf cart.</p><br><small><a href="http://crashworks.org/if_programming_languages_were_vehicles/" target="_blank">@source: if programming languages were vehicles</a></small></section><section><h2>WAT</h2><pre><code class="hljs javascript">2 == [2];
-// true
+.float-left {
+    float: left;
+}
 
-2 == [[2]];
-// true
+.float-right {
+    float: right;
+}</style></head><body><a href="https://github.com/purplecode/lightning-talk-golang" title="Fork me on Github" class="github-fork-ribbon right-top"></a><div class="reveal"><div class="slides"><section><h1>Go Programming Language</h1><h3>Introduction</h3></section><section><img src="src/images/logo.png"></section><section><style>#modules {
+    max-height: 60vh;
+    height: 60vh;
+}</style><img id="modules" src="src/images/modules.png"></section><section><h2>Go (Golang)</h2><ul><li>open source programming language</li><li>created at Google (2007, Robert Griesemer, Rob Pike, and Ken Thompson)</li><li>compiled, statically typed</li><li>garbage collection, structural typing</li><li>CSP-style<sup>*</sup> concurrent programming features</li></ul><br><br><small class="float-left">* communicating sequential processes</small></section><section><h2>Hello World</h2><pre><code class="hljs golang">package main
 
-[] + [];
-// ""
+import "fmt"
 
-[] + {};
-// "[object Object]"
-
-{} + [];
-// 0
-</code></pre></section></section><section><h2>This is all for now...</h2></section><section><h2>Thanks!</h2></section></div></div><script src="bower_components/reveal-js/lib/js/head.min.js"></script><script src="bower_components/reveal-js/js/reveal.js"></script><script>Reveal.initialize({
+func main() {
+    fmt.Println("Hello, World")
+}
+</code></pre></section><section><h2>Tooling</h2><ul><li>go get - simple package manager</li><li>go test</li><li>go build</li><li>go clean</li><li>go run</li><li>gofmt - formatter</li><li>golint - linter</li><li>godoc - documentation</li><li>go vet - static analyzer</li></ul></section><section><h2>Pros & Sugar</h2><ul><li>fast compilation time</li><li>initialization through type inference (x := 0 not int x = 0;)</li><li>built-in concurrency primitives: light-weight processes (goroutines), channels, and the select statement</li><li>multiple return values ([result, err] pair as convention)</li></ul></section><section><h2>Cons*</h2><ul><li>lack of mature libraries</li><li>no compile-time generics (code duplication)</li><li>no language extensibility (like operator overloading)</li><li>overhead of garbage collection</li><li>no inheritance</li><li>no assertions</li><li>no pointer arithmetic</li><li>no implicit type conversions (by compiler)</li></ul></section><section><h2>Using companies</h2><ul><li>Docker</li><li>Ethereum</li><li>Google</li><li>Dropbox</li><li>CloudFlare</li><li>SoundCloud</li><li>Cloud Foundry</li><li>CoreOS</li><li>Couchbase</li><li>MongoDB</li><li>Uber</li></ul><br><br><small>@source: &nbsp;<a href="https://en.wikipedia.org/wiki/Go_(programming_language)">https://en.wikipedia.org/wiki/Go_(programming_language)</a></small></section><section><h2>This is all for now...</h2></section><section><h2>Thanks!</h2></section></div></div><script src="bower_components/reveal-js/lib/js/head.min.js"></script><script src="bower_components/reveal-js/js/reveal.js"></script><script>Reveal.initialize({
     progress: true,
     slideNumber: false,
     history: true,

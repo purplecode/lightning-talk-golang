@@ -3,32 +3,93 @@ section
     h3 Introduction
 
 section
-    section
-        h2 Javascript
-        img(src="src/images/jsgolf.jpg")
-        p This is Javascript. If you put big wheels and a racing stripe on a golf cart, it's still a fucking golf cart.
-        br
-        small
-            a(href="http://crashworks.org/if_programming_languages_were_vehicles/" target="_blank") @source: if programming languages were vehicles
+    img(src="src/images/logo.png")
 
-    section
-        h2 WAT
-        pre
-            code.hljs.javascript.
-                2 == [2];
-                // true
+section
+    style.
+        #modules {
+            max-height: 60vh;
+            height: 60vh;
+        }
+    img#modules(src="src/images/modules.png")
 
-                2 == [[2]];
-                // true
+section
+    h2 Go (Golang)
+    ul
+        li open source programming language
+        li created at Google (2007, Robert Griesemer, Rob Pike, and Ken Thompson)
+        li compiled, statically typed
+        li garbage collection, structural typing
+        li CSP-style<sup>*</sup> concurrent programming features
+    br
+    br
+    small.float-left * communicating sequential processes
 
-                [] + [];
-                // ""
+section
+    h2 Hello World
+    pre
+        code.hljs.golang.
+            package main
 
-                [] + {};
-                // "[object Object]"
+            import "fmt"
 
-                {} + [];
-                // 0
+            func main() {
+                fmt.Println("Hello, World")
+            }
+
+section
+    h2 Tooling
+    ul
+        li go get - simple package manager
+        li go test
+        li go build
+        li go clean
+        li go run
+        li gofmt - formatter
+        li golint - linter
+        li godoc - documentation
+        li go vet - static analyzer
+
+section
+    h2 Pros & Sugar
+    ul
+        li fast compilation time
+        li initialization through type inference (x := 0 not int x = 0;)
+        li built-in concurrency primitives: light-weight processes (goroutines), channels, and the select statement
+        li multiple return values ([result, err] pair as convention)
+
+section
+    h2 Cons*
+    ul
+        li lack of mature libraries
+        li no compile-time generics (code duplication)
+        li no language extensibility (like operator overloading)
+        li overhead of garbage collection
+        li no inheritance
+        li no assertions
+        li no pointer arithmetic
+        li no implicit type conversions (by compiler)
+
+section
+    h2 Using companies
+    ul
+        li Docker
+        li Ethereum
+        li Google
+        li Dropbox
+        li CloudFlare
+        li SoundCloud
+        li Cloud Foundry
+        li CoreOS
+        li Couchbase
+        li MongoDB
+        li Uber
+    br
+    br
+    small @source: &nbsp;
+        a(href="https://en.wikipedia.org/wiki/Go_(programming_language)") https://en.wikipedia.org/wiki/Go_(programming_language)
+
+
 
 section
     h2 This is all for now...
