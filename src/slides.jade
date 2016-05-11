@@ -14,6 +14,8 @@ section
             height: 60vh;
         }
     img#modules(src="src/images/modules.png")
+    small @source: &nbsp;
+        a(href="http://www.modulecounts.com/") www.modulecounts.com
 
 section
     h2 Go (Golang)
@@ -36,7 +38,7 @@ section
 section
     h2 Hello World
     pre
-        code.hljs.golang.
+        code.hljs.go.
             package main
 
             import "fmt"
@@ -120,7 +122,7 @@ section
                 li pointers
                 li  custom types (struct)
                     pre
-                        code.hljs.golang.
+                        code.hljs.go.
                             type Circle struct {
                                 radius float64
                             }
@@ -130,7 +132,7 @@ section
 section
     h2 Functions
     pre
-        code.hljs.golang.
+        code.hljs.go.
             func addFactory(valueToAdd int) int {
                 return func(value) {
                     fmt.Println("%d + %d  = %d", value, valueToAdd, value + valueToAdd)
@@ -143,7 +145,7 @@ section
     .split
         .left
             pre
-                code.hljs.golang.
+                code.hljs.go.
                     type geometry interface {
                         area() float64
                     }
@@ -165,7 +167,7 @@ section
                     }
         .right
             pre
-                code.hljs.golang.
+                code.hljs.go.
                     func measure(g geometry) {
                         fmt.Println(g.area())
                     }
@@ -189,7 +191,7 @@ section
 section
     h2 Composition
     pre
-        code.hljs.golang.
+        code.hljs.go.
             type Person struct {
                 name string
                 age  int
@@ -224,7 +226,7 @@ section
 section
     h2 Concurrency: channels
     pre
-        code.hljs.golang.
+        code.hljs.go.
             func fibonacci(c, quit chan int) {
                 x, y := 0, 1
                 for {
@@ -255,7 +257,7 @@ section
 section
     h2 Defer
     pre
-        code.hljs.golang.
+        code.hljs.go.
             func CopyFile(dstName, srcName string) (written int64, err error) {
                 src, err := os.Open(srcName)
                 if err != nil {
@@ -277,7 +279,7 @@ section
 section
     h2 Defer
     pre
-        code.hljs.golang.
+        code.hljs.go.
             func a() {
                 i := 0
                 defer fmt.Println(i)
@@ -285,14 +287,14 @@ section
                 return
             } // 0
     pre
-        code.hljs.golang.
+        code.hljs.go.
             func b() {
                 for i := 0; i < 4; i++ {
                     defer fmt.Print(i)
                 }
             } // "3210":
     pre
-        code.hljs.golang.
+        code.hljs.go.
             func c() (i int) {
                 defer func() {
                     i++
@@ -306,7 +308,7 @@ section
     h2 Panic & recover
     .split
         pre.left
-            code.hljs.golang.
+            code.hljs.go.
                 func main() {
                     f()
                     fmt.Println("Returned normally from f.")
@@ -333,7 +335,7 @@ section
                     g(i + 1)
                 }
         pre.right
-            code.hljs.golang.
+            code.hljs.go.
                 Calling g.
                 Printing in g 0
                 Printing in g 1
@@ -409,7 +411,7 @@ section
 section
     h2 Testing
     pre
-        code.hljs.golang.
+        code.hljs.go.
             func TestTimeConsuming(t *testing.T) {
                 if testing.Short() {
                     t.Skip("skipping test in short mode.")

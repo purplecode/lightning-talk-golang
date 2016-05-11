@@ -41,25 +41,25 @@
 }</style></head><body><a href="https://github.com/purplecode/lightning-talk-golang" title="Fork me on Github" class="github-fork-ribbon right-top"></a><div class="reveal"><div class="slides"><section><h1>Go Programming Language</h1><h3>Introduction</h3></section><section><img src="src/images/logo.png"><br><a href="https://blog.golang.org/gopher">https://blog.golang.org/gopher</a></section><section><style>#modules {
     max-height: 60vh;
     height: 60vh;
-}</style><img id="modules" src="src/images/modules.png"></section><section><h2>Go (Golang)</h2><ul><li>open source programming language</li><li>created at Google (2007, Robert Griesemer, Rob Pike, and Ken Thompson)</li><li>compiled, statically typed</li><li>garbage collection, structural typing</li><li>CSP-style<sup>*</sup> concurrent programming features</li></ul><br><br><small class="float-left">* communicating sequential processes</small></section><section><h2>Naming dispute</h2><a href="https://en.wikipedia.org/wiki/Go_(programming_language)#Naming_dispute">Go &nbsp;</a>vs &nbsp;<a href="https://en.wikipedia.org/wiki/Go!_(programming_language)">Go!</a></section><section><h2>Hello World</h2><pre><code class="hljs golang">package main
+}</style><img id="modules" src="src/images/modules.png"><small>@source: &nbsp;<a href="http://www.modulecounts.com/">www.modulecounts.com</a></small></section><section><h2>Go (Golang)</h2><ul><li>open source programming language</li><li>created at Google (2007, Robert Griesemer, Rob Pike, and Ken Thompson)</li><li>compiled, statically typed</li><li>garbage collection, structural typing</li><li>CSP-style<sup>*</sup> concurrent programming features</li></ul><br><br><small class="float-left">* communicating sequential processes</small></section><section><h2>Naming dispute</h2><a href="https://en.wikipedia.org/wiki/Go_(programming_language)#Naming_dispute">Go &nbsp;</a>vs &nbsp;<a href="https://en.wikipedia.org/wiki/Go!_(programming_language)">Go!</a></section><section><h2>Hello World</h2><pre><code class="hljs go">package main
 
 import "fmt"
 
 func main() {
     fmt.Println("Hello, World")
 }
-</code></pre></section><section><h2>Tooling</h2><ul><li>go get - simple package manager</li><li>go test</li><li>go build</li><li>go clean</li><li>go run</li><li>gofmt - formatter</li><li>golint - linter</li><li>godoc - documentation</li><li>go vet - static analyzer</li></ul></section><section><h2>Pros & Sugar</h2><ul><li>fast compilation time</li><li>garbage collection</li><li>initialization through type inference (x := 0 not int x = 0;)</li><li>built-in concurrency primitives: light-weight processes (goroutines), channels, and the select statement</li><li>multiple return values, (result, err) pair as convention</li></ul></section><section><h2>Cons*</h2><ul><li>lack of mature libraries</li><li>no compile-time generics (code duplication)</li><li>no language extensibility (like operator overloading)</li><li>overhead of garbage collection</li><li>no inheritance</li><li>no assertions</li><li>no pointer arithmetic</li><li>no implicit type conversions (by compiler)</li></ul></section><section><h2>Companies using</h2><br><div class="split"><div class="left"><ul><li>Docker</li><li>Ethereum</li><li>Google</li><li>Dropbox</li><li>CloudFlare</li><li>SoundCloud</li></ul></div><div class="right"><ul><li>Cloud Foundry</li><li>CoreOS</li><li>Couchbase</li><li>MongoDB</li><li>Uber</li></ul></div></div><br><br><small>@source: &nbsp;<a href="https://en.wikipedia.org/wiki/Go_(programming_language)">https://en.wikipedia.org/wiki/Go_(programming_language)</a></small></section><section><h2>Types</h2><br><div class="split"><div class="left"><ul><li>byte, int64, float32, etc.</li><li>boolean</li><li>string (immutable)</li><li>arrays</li><li>hash tables</li></ul></div><div class="right"><ul><li>channels</li><li>pointers</li><li> custom types (struct)<pre><code class="hljs golang">type Circle struct {
+</code></pre></section><section><h2>Tooling</h2><ul><li>go get - simple package manager</li><li>go test</li><li>go build</li><li>go clean</li><li>go run</li><li>gofmt - formatter</li><li>golint - linter</li><li>godoc - documentation</li><li>go vet - static analyzer</li></ul></section><section><h2>Pros & Sugar</h2><ul><li>fast compilation time</li><li>garbage collection</li><li>initialization through type inference (x := 0 not int x = 0;)</li><li>built-in concurrency primitives: light-weight processes (goroutines), channels, and the select statement</li><li>multiple return values, (result, err) pair as convention</li></ul></section><section><h2>Cons*</h2><ul><li>lack of mature libraries</li><li>no compile-time generics (code duplication)</li><li>no language extensibility (like operator overloading)</li><li>overhead of garbage collection</li><li>no inheritance</li><li>no assertions</li><li>no pointer arithmetic</li><li>no implicit type conversions (by compiler)</li></ul></section><section><h2>Companies using</h2><br><div class="split"><div class="left"><ul><li>Docker</li><li>Ethereum</li><li>Google</li><li>Dropbox</li><li>CloudFlare</li><li>SoundCloud</li></ul></div><div class="right"><ul><li>Cloud Foundry</li><li>CoreOS</li><li>Couchbase</li><li>MongoDB</li><li>Uber</li></ul></div></div><br><br><small>@source: &nbsp;<a href="https://en.wikipedia.org/wiki/Go_(programming_language)">https://en.wikipedia.org/wiki/Go_(programming_language)</a></small></section><section><h2>Types</h2><br><div class="split"><div class="left"><ul><li>byte, int64, float32, etc.</li><li>boolean</li><li>string (immutable)</li><li>arrays</li><li>hash tables</li></ul></div><div class="right"><ul><li>channels</li><li>pointers</li><li> custom types (struct)<pre><code class="hljs go">type Circle struct {
     radius float64
 }
 
 type ipv4addr uint32
-</code></pre></li></ul></div></div></section><section><h2>Functions</h2><pre><code class="hljs golang">func addFactory(valueToAdd int) int {
+</code></pre></li></ul></div></div></section><section><h2>Functions</h2><pre><code class="hljs go">func addFactory(valueToAdd int) int {
     return func(value) {
         fmt.Println("%d + %d  = %d", value, valueToAdd, value + valueToAdd)
         return value + valueToAdd
     }
 }
-</code></pre></section><section><h2>Interfaces</h2><div class="split"><div class="left"><pre><code class="hljs golang">type geometry interface {
+</code></pre></section><section><h2>Interfaces</h2><div class="split"><div class="left"><pre><code class="hljs go">type geometry interface {
     area() float64
 }
 
@@ -77,7 +77,7 @@ func (r rect) area() float64 {
 
 func (c circle) area() float64 {
     return math.Pi * c.radius * c.radius
-}</code></pre></div><div class="right"><pre><code class="hljs golang">func measure(g geometry) {
+}</code></pre></div><div class="right"><pre><code class="hljs go">func measure(g geometry) {
     fmt.Println(g.area())
 }
 
@@ -96,7 +96,7 @@ func main() {
 
 
 
-</code></pre></div></div></section><section><h2>Composition</h2><pre><code class="hljs golang">type Person struct {
+</code></pre></div></div></section><section><h2>Composition</h2><pre><code class="hljs go">type Person struct {
     name string
     age  int
 }
@@ -118,7 +118,7 @@ func main() {
     b.age += 10
     b.hello()
 }
-</code></pre></section><section><h2>Concurrency: goroutines</h2><ul><li>primary concurrency construct, a type of light-weight process</li><li>language specification does not specify how goroutines should be implemented</li><li>like threads, but cheaper (smaller stacks)</li><li>current implementations: multiplex goroutines onto a smaller set of operating system threads</li></ul></section><section><h2>Concurrency: channels</h2><pre><code class="hljs golang">func fibonacci(c, quit chan int) {
+</code></pre></section><section><h2>Concurrency: goroutines</h2><ul><li>primary concurrency construct, a type of light-weight process</li><li>language specification does not specify how goroutines should be implemented</li><li>like threads, but cheaper (smaller stacks)</li><li>current implementations: multiplex goroutines onto a smaller set of operating system threads</li></ul></section><section><h2>Concurrency: channels</h2><pre><code class="hljs go">func fibonacci(c, quit chan int) {
     x, y := 0, 1
     for {
         select {
@@ -141,7 +141,7 @@ func main() {
         quit <- 0
     }()
     fibonacci(c, quit)
-}</code></pre><small>@source:&nbsp;<a href="https://tour.golang.org/concurrency/6">https://tour.golang.org/concurrency/6</a></small></section><section><h2>Defer</h2><pre><code class="hljs golang">func CopyFile(dstName, srcName string) (written int64, err error) {
+}</code></pre><small>@source:&nbsp;<a href="https://tour.golang.org/concurrency/6">https://tour.golang.org/concurrency/6</a></small></section><section><h2>Defer</h2><pre><code class="hljs go">func CopyFile(dstName, srcName string) (written int64, err error) {
     src, err := os.Open(srcName)
     if err != nil {
         return
@@ -155,21 +155,21 @@ func main() {
 
     defer dst.Close()
     return io.Copy(dst, src)
-}</code></pre><small>@source:&nbsp;<a href="https://blog.golang.org/defer-panic-and-recover">https://blog.golang.org/defer-panic-and-recover</a></small></section><section><h2>Defer</h2><pre><code class="hljs golang">func a() {
+}</code></pre><small>@source:&nbsp;<a href="https://blog.golang.org/defer-panic-and-recover">https://blog.golang.org/defer-panic-and-recover</a></small></section><section><h2>Defer</h2><pre><code class="hljs go">func a() {
     i := 0
     defer fmt.Println(i)
     i++
     return
-} // 0</code></pre><pre><code class="hljs golang">func b() {
+} // 0</code></pre><pre><code class="hljs go">func b() {
     for i := 0; i < 4; i++ {
         defer fmt.Print(i)
     }
-} // "3210":</code></pre><pre><code class="hljs golang">func c() (i int) {
+} // "3210":</code></pre><pre><code class="hljs go">func c() (i int) {
     defer func() {
         i++
     }()
     return 1
-} // 2</code></pre><small>@source:&nbsp;<a href="https://blog.golang.org/defer-panic-and-recover">https://blog.golang.org/defer-panic-and-recover</a></small></section><section><h2>Panic & recover</h2><div class="split"><pre class="left"><code class="hljs golang">func main() {
+} // 2</code></pre><small>@source:&nbsp;<a href="https://blog.golang.org/defer-panic-and-recover">https://blog.golang.org/defer-panic-and-recover</a></small></section><section><h2>Panic & recover</h2><div class="split"><pre class="left"><code class="hljs go">func main() {
     f()
     fmt.Println("Returned normally from f.")
 }
@@ -193,7 +193,7 @@ func g(i int) {
     defer fmt.Println("Defer in g", i)
     fmt.Println("Printing in g", i)
     g(i + 1)
-}</code></pre><pre class="right"><code class="hljs golang">Calling g.
+}</code></pre><pre class="right"><code class="hljs go">Calling g.
 Printing in g 0
 Printing in g 1
 Printing in g 2
@@ -235,7 +235,7 @@ src/
             stringutil/
                 reverse.go          # package source
                 reverse_test.go     # test source
-</code></pre></section><section><h2>Go package management</h2><br><ol><li>Repeatable builds</li><li>Isolated environments</li><li>Community consensus</li></ol><br><br><a href="https://github.com/golang/go/wiki/PackageManagementTools">https://github.com/golang/go/wiki/PackageManagementTools</a><br><a href="http://jbeckwith.com/2015/05/29/dependency-management-go/">http://jbeckwith.com/2015/05/29/dependency-management-go/</a></section><section><h2>Testing</h2><pre><code class="hljs golang">func TestTimeConsuming(t *testing.T) {
+</code></pre></section><section><h2>Go package management</h2><br><ol><li>Repeatable builds</li><li>Isolated environments</li><li>Community consensus</li></ol><br><br><a href="https://github.com/golang/go/wiki/PackageManagementTools">https://github.com/golang/go/wiki/PackageManagementTools</a><br><a href="http://jbeckwith.com/2015/05/29/dependency-management-go/">http://jbeckwith.com/2015/05/29/dependency-management-go/</a></section><section><h2>Testing</h2><pre><code class="hljs go">func TestTimeConsuming(t *testing.T) {
     if testing.Short() {
         t.Skip("skipping test in short mode.")
     }

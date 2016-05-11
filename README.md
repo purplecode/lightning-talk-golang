@@ -1,4 +1,4 @@
-Introduction to golang. Presentation slides.
+Introduction to Go programming language (golang). Presentation slides.
 
 [purplecode.github.io/lightning-talk-golang](http://purplecode.github.io/lightning-talk-golang)
 
