@@ -133,8 +133,8 @@ section
     h2 Functions
     pre
         code.hljs.go.
-            func addFactory(valueToAdd int) int {
-                return func(value) {
+            func addFactory(valueToAdd int) func(int) {
+                return func(value int) {
                     fmt.Println("%d + %d  = %d", value, valueToAdd, value + valueToAdd)
                     return value + valueToAdd
                 }

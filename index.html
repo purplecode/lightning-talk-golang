@@ -53,8 +53,8 @@ func main() {
 }
 
 type ipv4addr uint32
-</code></pre></li></ul></div></div></section><section><h2>Functions</h2><pre><code class="hljs go">func addFactory(valueToAdd int) int {
-    return func(value) {
+</code></pre></li></ul></div></div></section><section><h2>Functions</h2><pre><code class="hljs go">func addFactory(valueToAdd int) func(int) {
+    return func(value int) {
         fmt.Println("%d + %d  = %d", value, valueToAdd, value + valueToAdd)
         return value + valueToAdd
     }
